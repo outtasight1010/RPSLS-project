@@ -13,11 +13,13 @@ class Greeting:
               "\n5.Paper disproves Spock. \n6.Spock vaporizes Rock. \n7.Lizard poisons Spock. \n8.Spock smashes Scissors. \n9.Scissors decapitates Lizard.\n10.Lizard eats Paper.")
         print("")
         print("We will go BEST out of THREE. May the best player WIN. Let's begin:")
+        print("")
 
 
 games = Greeting()
 
 games.open_greeting()
 games.games_rules()
+
 
 
