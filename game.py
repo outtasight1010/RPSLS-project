@@ -1,10 +1,20 @@
 def main():
-    gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
+    first_player = 0
+    computer_player = 0
+    game_times = 0
     open_greeting()
-    game_choice()
+    choice_of_game = game_choice()
+    if choice_of_game == "1":
+        game_choice_1(first_player, computer_player, game_times)
+    elif choice_of_game == "2":
+        print("not wready pwease")
+    
+
+def game_choice_1(first_player, computer_player, game_times):
+    gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
     player_choice = get_user_input()#this holds the choice in this function
     second_choice = get_random_choice(gesture_list)# this holds the choice in this function
-    determine_winner(player_choice, second_choice, gesture_list)# determine winner function
+    determine_winner(player_choice, second_choice, gesture_list, first_player, computer_player, game_times)# determine winner function
 
 
 
@@ -47,17 +57,26 @@ def game_choice():
 
 
     
-def determine_winner(player_choice, second_choice, gesture_list):
+def determine_winner(player_choice, second_choice, gesture_list, first_player, computer_player, game_times):
+
     if player_choice == "1":
         if second_choice == (gesture_list[0]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[0]))
             print("TIE. Go again.")
+            game_choice_1(first_player, computer_player, game_times)
         elif second_choice == (gesture_list[1]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[1]))
             print("Paper covers Rock!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("game over pwease")
+
         elif second_choice == (gesture_list[2]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[2]))
