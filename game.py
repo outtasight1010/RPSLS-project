@@ -1,15 +1,24 @@
 def main():
     gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
+    open_greeting()
+    game_choice()
     player_choice = get_user_input()#this holds the choice in this function
     second_choice = get_random_choice(gesture_list)# this holds the choice in this function
-    game_choice()
     determine_winner(player_choice, second_choice, gesture_list)# determine winner function
 
 
 
 
+def open_greeting():
+        print("Welcome to Rock, Paper, Scissors, Lizard, Spock! Or what we'd like to call RPSLS!")
+        print("")
+        print("Ok, listen up. Here are the rules of the game: \n1.Rock crushes Scissors.\n2.Scissor cuts Paper.\n3.Paper covers Rock.\n4.Rock crushes Lizard."
+              "\n5.Paper disproves Spock. \n6.Spock vaporizes Rock. \n7.Lizard poisons Spock. \n8.Spock smashes Scissors. \n9.Scissors decapitates Lizard.\n10.Lizard eats Paper.")
+        print("")
+        print("We will go BEST out of THREE. May the best player WIN. Let's begin:")
+        print("")
+
 def get_user_input():# create function to get user(player 1) input
-    
     player_choice = input("Player, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
     while player_choice!="1" and player_choice!="2" and player_choice!= "3" and player_choice!="4" and player_choice!="5":
         print("Oops, you must choose a number listed. Please try again.")
@@ -19,11 +28,10 @@ def get_user_input():# create function to get user(player 1) input
     
 
 def get_random_choice(gesture_list):# create function to retrieve random gesture
-   
     import random
     second_choice = random.choice(gesture_list)
-    
     return second_choice
+
 
 def game_choice():
     choice_of_game = input("Hi, please type 1. for One Player Game, or 2. for Two Player Game.")
@@ -35,15 +43,10 @@ def game_choice():
             print("You have chosen: One Player Game.")
         elif choice_of_game == "2":
             print("You have chosen: Two Player Game.")
-
         return choice_of_game
-choice_of_game = game_choice()
+
 
     
-
-
-
-
 def determine_winner(player_choice, second_choice, gesture_list):
     if player_choice == "1":
         if second_choice == (gesture_list[0]):
@@ -172,6 +175,10 @@ def determine_winner(player_choice, second_choice, gesture_list):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[4]))
             print("TIE. Go again.")
+
+main()
+
+
 
 
 

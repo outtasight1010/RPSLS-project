@@ -1,12 +1,10 @@
-from greeting import Greeting
+import game
+
+
+game.main()
 
 
 
-
-games = Greeting()
-
-
-games.open_greeting()
 
 
 
