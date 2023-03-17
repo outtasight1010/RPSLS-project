@@ -1,10 +1,10 @@
 def main():
     gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
-    open_greeting()
-    game_choice()
-    player_1_choice = player_1_input()
-    player_2_choice = player_2_input()
-    winner_game_2(player_1_choice, player_2_choice)
+    open_greeting() #greeting opening, plus rules are listed
+    game_choice() #allows user to choose option 1.One player game, or 2.Two player game
+    player_1_choice = player_1_input() #variable created for Player One
+    player_2_choice = player_2_input() #variable created for Player Two
+    winner_game_2(player_1_choice, player_2_choice) # created to determine gesture choices
 
 
 
@@ -37,19 +37,19 @@ def game_choice():
 
 
 def player_1_input():# create function to get user(player 1) input
-    player_1_choice = input("Player, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
+    player_1_choice = input("Player One, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
     while player_1_choice!="1" and player_1_choice!="2" and player_1_choice!= "3" and player_1_choice!="4" and player_1_choice!="5":
         print("Oops, you must choose a number listed. Please try again.")
-        player_1_choice = input("Please choose a gesture(type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
+        player_1_choice = input("Player One, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
     else:
         return player_1_choice
     
 
 def player_2_input():# create function to get user(player 1) input
-    player_2_choice = input("Player, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
+    player_2_choice = input("Player Two, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
     while player_2_choice!="1" and player_2_choice!="2" and player_2_choice!= "3" and player_2_choice!="4" and player_2_choice!="5":
         print("Oops, you must choose a number listed. Please try again.")
-        player_2_choice = input("Please choose a gesture(type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
+        player_2_choice = input("Player Two, please choose a gesture (type corresponding number): \n1 for Rock.\n2 for Paper.\n3 for Scissors.\n4 for Lizard.\n5 for Spock. ")
     else:
         return player_2_choice
     
@@ -186,6 +186,9 @@ def winner_game_2(player_1_choice, player_2_choice):
             print("AI chooses:",(gesture_list[4]))
             print("TIE. Go again.")
 
+
+player_1_input()
+player_2_input()
 
 
 
