@@ -8,6 +8,7 @@ def main():
         game_choice_1(first_player, computer_player, game_times)
     elif choice_of_game == "2":
         print("not wready pwease")
+    game_over()
     
 
 def game_choice_1(first_player, computer_player, game_times):
@@ -16,6 +17,8 @@ def game_choice_1(first_player, computer_player, game_times):
     second_choice = get_random_choice(gesture_list)# this holds the choice in this function
     determine_winner(player_choice, second_choice, gesture_list, first_player, computer_player, game_times)# determine winner function
 
+def game_over():
+    print("And that's a WRAP! In other words, it's Game Over!")
 
 
 
@@ -75,23 +78,41 @@ def determine_winner(player_choice, second_choice, gesture_list, first_player, c
             if game_times < 3:
                 game_choice_1(first_player, computer_player, game_times)
             else:
-                print("game over pwease")
+                print("Looks like we are done here!")
 
         elif second_choice == (gesture_list[2]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[2]))
             print("Rock crushes Scissors!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[3]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[3]))
             print("Rock crushes Lizard!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[4]):
             print("You choose Rock.")
             print("AI chooses:",(gesture_list[4]))
             print("Spock vaporizes Rock!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         
     elif player_choice == "2":
         if second_choice == (gesture_list[0]):
@@ -99,101 +120,201 @@ def determine_winner(player_choice, second_choice, gesture_list, first_player, c
             print("AI chooses:",(gesture_list[0]))
             print("Paper covers Rock!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[1]):
             print("You choose Paper.")
             print("AI chooses:",(gesture_list[1]))
             print("TIE. Go again.")
+            game_choice_1(first_player, computer_player, game_times)
         elif second_choice == (gesture_list[2]):
             print("You choose Paper.")
             print("AI chooses:",(gesture_list[2]))
             print("Scissors cuts Paper!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[3]):
             print("You choose Paper.")
             print("AI chooses:",(gesture_list[3]))
             print("Lizard eats Paper!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[4]):
             print("You choose Paper.")
             print("AI chooses:",(gesture_list[4]))
             print("Paper disproves Spock!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
     elif player_choice == "3":        
         if second_choice == (gesture_list[0]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[0]))
             print("Rock crushes Scissors!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[1]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[1]))
             print("Scissors cuts Paper!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[2]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[2]))
             print("TIE. Go again.")
             print("")
+            game_choice_1(first_player, computer_player, game_times)
         elif second_choice == (gesture_list[3]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[3]))
             print("Scissors decapitates Lizard!")
             print("")
+            first_player +=1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[4]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[4]))
             print("Spock smashes Scissors!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
     elif player_choice == "4":
         if second_choice == (gesture_list[0]):
             print("You choose Lizard.")
             print("AI chooses:",(gesture_list[0]))
             print("Rock crushes Lizard!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[1]):
             print("You choose Lizard.")
             print("AI chooses:",(gesture_list[1]))
             print("Lizard eats Paper!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[2]):
             print("You choose Lizard.")
             print("AI chooses:",(gesture_list[2]))
             print("Scissors decapitates Lizard!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[3]):
             print("You choose Scissors.")
             print("AI chooses:",(gesture_list[3]))
             print("TIE. Go again.")
             print("")
+            game_choice_1(first_player, computer_player, game_times)
         elif second_choice == (gesture_list[4]):
             print("You choose Lizard.")
             print("AI chooses:",(gesture_list[4]))
             print("Lizard poisons Spock!")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
     elif player_choice == "5":  
         if second_choice == (gesture_list[0]):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[0]))
             print("Spock vaporizes Rock!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[1]):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[1]))
             print("Paper disproves Spock!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[2]):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[2]))
             print("Spock smashes Scissors!")
             print("")
+            first_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[3]):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[3]))
             print("Lizard poisons Spock!")
             print("")
+            computer_player += 1
+            game_times += 1
+            if game_times < 3:
+                game_choice_1(first_player, computer_player, game_times)
+            else:
+                print("Looks like we are done here!")
         elif second_choice == (gesture_list[4]):
             print("You choose Spock.")
             print("AI chooses:",(gesture_list[4]))
             print("TIE. Go again.")
+            game_choice_1(first_player, computer_player, game_times)
 
 main()
 
