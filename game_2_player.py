@@ -1,10 +1,24 @@
+
 def main():
-    gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
-    open_greeting() #greeting opening, plus rules are listed
-    game_choice() #allows user to choose option 1.One player game, or 2.Two player game
+    first_player = 0 #created a counter for player 1
+    second_player = 0 #created a counter for player 2
+    game_times = 0 #created a counter for each time they draw a gesture, in this case we want best out of three
+    
+    choice_of_game = game_choice() #allows user to choose option 1.One player game, or 2.Two player game
+    
     player_1_choice = player_1_input() #variable created for Player One
     player_2_choice = player_2_input() #variable created for Player Two
     winner_game_2(player_1_choice, player_2_choice) # created to determine gesture choices
+
+    
+
+
+def game_choice_2(first_player, second_player, game_times): #determine whether user wants to play 1 or 2 player game
+    gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
+    player_1_choice = player_1_input()#this holds the choice in this function
+    player_2_choice = player_2_input(gesture_list)# this holds the choice in this function
+    winner_game_2(player_1_choice, player_2_choice, gesture_list, first_player, second_player, game_times)# determine winner function
+
 
 
 
@@ -90,101 +104,103 @@ def winner_game_2(player_1_choice, player_2_choice):
            print("Paper covers Rock!")
            print("")
            #continue Mish from here
-        elif second_choice == (gesture_list[1]):
-            print("You choose Paper.")
-            print("AI chooses:",(gesture_list[1]))
-            print("TIE. Go again.")
-        elif second_choice == (gesture_list[2]):
-            print("You choose Paper.")
-            print("AI chooses:",(gesture_list[2]))
-            print("Scissors cuts Paper!")
-            print("")
-        elif second_choice == (gesture_list[3]):
-            print("You choose Paper.")
-            print("AI chooses:",(gesture_list[3]))
-            print("Lizard eats Paper!")
-            print("")
-        elif second_choice == (gesture_list[4]):
-            print("You choose Paper.")
-            print("AI chooses:",(gesture_list[4]))
-            print("Paper disproves Spock!")
-            print("")
-    elif player_choice == "3":        
-        if second_choice == (gesture_list[0]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[0]))
-            print("Rock crushes Scissors!")
-            print("")
-        elif second_choice == (gesture_list[1]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[1]))
-            print("Scissors cuts Paper!")
-            print("")
-        elif second_choice == (gesture_list[2]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[2]))
-            print("TIE. Go again.")
-            print("")
-        elif second_choice == (gesture_list[3]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[3]))
-            print("Scissors decapitates Lizard!")
-            print("")
-        elif second_choice == (gesture_list[4]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[4]))
-            print("Spock smashes Scissors!")
-            print("")
-    elif player_choice == "4":
-        if second_choice == (gesture_list[0]):
-            print("You choose Lizard.")
-            print("AI chooses:",(gesture_list[0]))
-            print("Rock crushes Lizard!")
-            print("")
-        elif second_choice == (gesture_list[1]):
-            print("You choose Lizard.")
-            print("AI chooses:",(gesture_list[1]))
-            print("Lizard eats Paper!")
-            print("")
-        elif second_choice == (gesture_list[2]):
-            print("You choose Lizard.")
-            print("AI chooses:",(gesture_list[2]))
-            print("Scissors decapitates Lizard!")
-            print("")
-        elif second_choice == (gesture_list[3]):
-            print("You choose Scissors.")
-            print("AI chooses:",(gesture_list[3]))
-            print("TIE. Go again.")
-            print("")
-        elif second_choice == (gesture_list[4]):
-            print("You choose Lizard.")
-            print("AI chooses:",(gesture_list[4]))
-            print("Lizard poisons Spock!")
-    elif player_choice == "5":  
-        if second_choice == (gesture_list[0]):
-            print("You choose Spock.")
-            print("AI chooses:",(gesture_list[0]))
-            print("Spock vaporizes Rock!")
-            print("")
-        elif second_choice == (gesture_list[1]):
-            print("You choose Spock.")
-            print("AI chooses:",(gesture_list[1]))
-            print("Paper disproves Spock!")
-            print("")
-        elif second_choice == (gesture_list[2]):
-            print("You choose Spock.")
-            print("AI chooses:",(gesture_list[2]))
-            print("Spock smashes Scissors!")
-            print("")
-        elif second_choice == (gesture_list[3]):
-            print("You choose Spock.")
-            print("AI chooses:",(gesture_list[3]))
-            print("Lizard poisons Spock!")
-            print("")
-        elif second_choice == (gesture_list[4]):
-            print("You choose Spock.")
-            print("AI chooses:",(gesture_list[4]))
-            print("TIE. Go again.")
+        elif player_2_choice == (gesture_list[1]):
+           print("Player One chooses:",(gesture_list[1]))
+           print("Player Two chooses:",(gesture_list[1]))
+           print("TIE. Go again.")
+           print("")
+        elif player_2_choice == (gesture_list[2]):
+           print("Player One chooses:",(gesture_list[1]))
+           print("Player Two chooses:",(gesture_list[2]))
+           print("Scissors cuts Paper!")
+           print("")
+        elif player_2_choice == (gesture_list[3]):
+           print("Player One chooses:",(gesture_list[1]))
+           print("Player Two chooses:",(gesture_list[3]))
+           print("Lizard eats Paper!")
+           print("")
+        elif player_2_choice == (gesture_list[4]):
+           print("Player One chooses:",(gesture_list[1]))
+           print("Player Two chooses:",(gesture_list[4]))
+           print("Paper disproves Spock!")
+           print("")
+    elif player_1_choice == (gesture_list[2]):        
+        if player_2_choice == (gesture_list[0]):
+           print("Player One chooses:",(gesture_list[2]))
+           print("Player Two chooses:",(gesture_list[0]))
+           print("Rock crushes Scissors!")
+           print("")
+        elif player_2_choice == (gesture_list[1]):
+           print("Player One chooses:",(gesture_list[2]))
+           print("Player Two chooses:",(gesture_list[1]))
+           print("Scissors cuts Paper!")
+           print("")
+        elif player_2_choice == (gesture_list[2]):
+           print("Player One chooses:",(gesture_list[2]))
+           print("Player Two chooses:",(gesture_list[2]))
+           print("TIE. Go again.")
+           print("")
+        elif player_2_choice == (gesture_list[3]):
+           print("Player One chooses:",(gesture_list[2]))
+           print("Player Two chooses:",(gesture_list[3]))
+           print("Scissors decapitates Lizard!")
+           print("")
+        elif player_2_choice == (gesture_list[4]):
+           print("Player One chooses:",(gesture_list[2]))
+           print("Player Two chooses:",(gesture_list[4]))
+           print("Spock smashes Scissors!")
+           print("")
+    elif player_1_choice == (gesture_list[3]):
+        if player_2_choice == (gesture_list[0]):
+           print("Player One chooses:",(gesture_list[3]))
+           print("Player Two chooses:",(gesture_list[0]))
+           print("Rock crushes Lizard!")
+           print("")
+        elif player_2_choice == (gesture_list[1]):
+           print("Player One chooses:",(gesture_list[3]))
+           print("Player Two chooses:",(gesture_list[1]))
+           print("Lizard eats Paper!")
+           print("")
+        elif player_2_choice == (gesture_list[2]):
+           print("Player One chooses:",(gesture_list[3]))
+           print("Player Two chooses:",(gesture_list[2]))
+           print("Scissors decapitates Lizard!")
+           print("")
+        elif player_2_choice == (gesture_list[3]):
+           print("Player One chooses:",(gesture_list[3]))
+           print("Player Two chooses:",(gesture_list[3]))
+           print("TIE. Go again.")
+           print("")
+        elif player_2_choice == (gesture_list[4]):
+           print("Player One chooses:",(gesture_list[3]))
+           print("Player Two chooses:",(gesture_list[4]))
+           print("Lizard poisons Spock!")
+           print("")
+    elif player_1_choice == (gesture_list[4]):  
+        if player_2_choice == (gesture_list[0]):
+           print("Player One chooses:",(gesture_list[4]))
+           print("Player Two chooses:",(gesture_list[0]))
+           print("Spock vaporizes Rock!")
+           print("")
+        elif player_2_choice == (gesture_list[1]):
+           print("Player One chooses:",(gesture_list[4]))
+           print("Player Two chooses:",(gesture_list[1]))
+           print("Paper disproves Spock!")
+           print("")
+        elif player_2_choice == (gesture_list[2]):
+           print("Player One chooses:",(gesture_list[4]))
+           print("Player Two chooses:",(gesture_list[2]))
+           print("Spock smashes Scissors!")
+           print("")
+        elif player_2_choice == (gesture_list[3]):
+           print("Player One chooses:",(gesture_list[4]))
+           print("Player Two chooses:",(gesture_list[3]))
+           print("Lizard poisons Spock!")
+           print("")
+        elif player_2_choice == (gesture_list[4]):
+           print("Player One chooses:",(gesture_list[4]))
+           print("Player Two chooses:",(gesture_list[4]))
+           print("TIE. Go again.")
 
 
 player_1_input()

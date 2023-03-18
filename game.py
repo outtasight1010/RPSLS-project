@@ -1,13 +1,18 @@
+import game_2_player
+
 def main():
     first_player = 0 #created a counter for player 1
     computer_player = 0 #created a counter for AI(computer) player
+    game_2_player.second_player
+    second_player = 0
     game_times = 0 #created a counter for each time they draw a gesture, in this case we want best out of three
     open_greeting()
     choice_of_game = game_choice()
     if choice_of_game == "1":
         game_choice_1(first_player, computer_player, game_times) #passed counter variables in function
     elif choice_of_game == "2":
-        print("not wready pwease")
+        game_2_player.game_choice_2(first_player, second_player, game_times)
+        
     game_over()
     
 
