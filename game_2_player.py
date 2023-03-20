@@ -203,8 +203,10 @@ def winner_game_2(player_1_choice, player_2_choice):
            print("TIE. Go again.")
 
 
-player_1_input()
-player_2_input()
+
+
+
+
 
 
 
